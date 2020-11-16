@@ -1,2 +1,3 @@
+include ':otp'
 include ':sample'
 rootProject.name = "OTP EditText"
