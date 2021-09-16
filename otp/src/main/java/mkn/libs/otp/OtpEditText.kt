@@ -84,7 +84,7 @@ class OTPEditText @JvmOverloads constructor(
         mWidth = allCharactersWidth.toInt() + allSpacesWidth.toInt() + horizontalPadding
         super.onMeasure(
             MeasureSpec.makeMeasureSpec(mWidth, MeasureSpec.EXACTLY),
-            MeasureSpec.makeMeasureSpec(56.dp(), MeasureSpec.EXACTLY)
+            MeasureSpec.makeMeasureSpec(56.dp, MeasureSpec.EXACTLY)
         )
     }
 
@@ -92,9 +92,9 @@ class OTPEditText @JvmOverloads constructor(
         super.onSizeChanged(w, h, oldw, oldh)
         lineRect[0].set(
             (paddingLeft + emSize.div(2) - lineWidth.div(2)),
-            height - 10.dpf(),
+            height - 10.dpf,
             paddingLeft + emSize.div(2) - lineWidth.div(2) + lineWidth,
-            height - 7.dpf()
+            height - 7.dpf
         )
 
         lineRect.forEachIndexed { index, rectF ->
@@ -103,11 +103,11 @@ class OTPEditText @JvmOverloads constructor(
                     lineRect[index - 1].right - lineWidth.div(2) - emSize.div(2) + emSize.plus(
                         paddingPx
                     ) + emSize.div(2) - lineWidth.div(2),
-                    height - 10.dpf(),
+                    height - 10.dpf,
                     lineRect[index - 1].right - lineWidth.div(2) - emSize.div(2) + emSize.plus(
                         paddingPx
                     ) + emSize.div(2) - lineWidth.div(2) + lineWidth,
-                    height - 7.dpf()
+                    height - 7.dpf
                 )
             }
         }
@@ -128,7 +128,7 @@ class OTPEditText @JvmOverloads constructor(
                 linePaint.color = successColor
             }
 
-            canvas?.drawRoundRect(rectF, 6.dpf(), 6.dpf(), linePaint)
+            canvas?.drawRoundRect(rectF, 6.dpf, 6.dpf, linePaint)
         }
 
     }
