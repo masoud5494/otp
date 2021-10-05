@@ -2,24 +2,16 @@ package mkn.libs.otp
 
 import android.content.res.Resources
 import kotlin.math.ceil
+val Int.dp: Int
+    get() = if (this == 0) 0 else ceil((Resources.getSystem().displayMetrics.density * this).toDouble()).toInt()
 
-fun Int.dpf(): Float {
-    return this.dp().toFloat()
-}
+val Float.dp: Int
+    get() = if (this == 0f) 0 else ceil((Resources.getSystem().displayMetrics.density * this).toDouble()).toInt()
 
-fun Float.dpf(): Float {
-    return this.dp().toFloat()
-}
+val Int.dpf: Float
+    get() = this.dp.toFloat()
 
-fun Int.dp(): Int {
-    return if (this == 0) {
-        0
-    } else ceil((Resources.getSystem().displayMetrics.density * this).toDouble()).toInt()
-}
-
-fun Float.dp(): Int {
-    return if (this == 0f) {
-        0
-    } else ceil((Resources.getSystem().displayMetrics.density * this).toDouble()).toInt()
-}
+val Float.dpf: Float
+    get() = this.dp.toFloat()
+    
 
